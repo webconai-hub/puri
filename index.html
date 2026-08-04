@@ -653,6 +653,75 @@
                 }, 150);
             }, { passive: true });
         });
+
+    /* --- LÓGICA DE CONEXIÓN DEL DESEO CON EL SERVIDOR Y POSTGRESQL --- */
+        async function submitWishForm(e) {
+            e.preventDefault();
+            const emailInput = document.getElementById('wishEmail');
+            const btn = document.getElementById('btnWishSubmit');
+
+            btn.disabled = true;
+            btn.style.opacity = "0.5";
+            btn.innerText = "⏳ Concediendo tu deseo...";
+
+            try {
+                const res = await fetch('/api/public/landing-wish', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email: emailInput.value })
+                });
+                const data = await res.json();
+
+                if (res.ok && data.status === 'success') {
+                    // 1. Ocultar el texto del deseo y el formulario anterior
+                    document.querySelector('.wish-text').style.display = 'none';
+                    document.getElementById('wishForm').style.display = 'none';
+
+                    // 2. Desplegar la tarjeta de éxito con la Llave y las Instrucciones
+                    const modalCard = document.querySelector('.modal-card');
+                    const successBox = document.createElement('div');
+                    successBox.style.padding = "10px";
+                    successBox.style.textAlign = "center";
+                    
+                    successBox.innerHTML = `
+                        <h2 style="font-size:2rem; color:#0284c7; margin-bottom:15px;">🎉 ¡Tu Deseo ha sido Concedido!</h2>
+                        <p style="font-size:1.2rem; color:#334155; margin-bottom:20px;">
+                            Hemos preparado tu entorno completo para administrar tu planta. Tu acceso exclusivo durante 30 días está listo.
+                        </p>
+                        
+                        <div style="background:#e0f2fe; border:2px dashed #0284c7; padding:20px; border-radius:16px; margin-bottom:25px;">
+                            <div style="font-size:1rem; color:#0369a1; font-weight:bold;">TU LLAVE DE ACTIVACIÓN DE ADMINISTRADOR:</div>
+                            <div style="font-size:2.8rem; font-weight:bold; color:#0f172a; letter-spacing:3px; margin:10px 0;">${data.activation_code}</div>
+                            <small style="color:#64748b;">(Se ha enviado una copia con instrucciones a ${emailInput.value})</small>
+                        </div>
+
+                        <a href="${data.bot_url}" target="_blank" class="btn-mkt" style="display:block; text-decoration:none; margin:0 auto; text-align:center;">
+                            📲 Abrir Telegram e Ingresar Llave
+                        </a>
+
+                        <div style="text-align:left; background:#f8fafc; padding:20px; border-radius:12px; margin-top:25px; font-size:0.95rem; color:#475569; line-height:1.6;">
+                            <strong>📌 Guía Rápida de Inicio:</strong><br>
+                            1. Toca el botón azul arriba para abrir el Bot en Telegram y pega tu Llave <strong>${data.activation_code}</strong>.<br>
+                            2. En 'Personal' -> Crea tus primeras 'Rutas'.<br>
+                            3. Registra tus 'Empleados' y 'Clientes'.<br>
+                            4. Da de alta tus 'Productos' en Inventario.<br>
+                            5. ¡Listo! Tus choferes ya pueden cargar camión, vender en calle y cobrar desde su celular.
+                        </div>
+                    `;
+                    modalCard.appendChild(successBox);
+                } else {
+                    alert("❌ Error: " + (data.error || "No se pudo procesar tu deseo"));
+                    btn.disabled = false;
+                    btn.style.opacity = "1";
+                    btn.innerText = "Pedir Deseo (30 días full)";
+                }
+            } catch(err) {
+                alert("❌ Falló la comunicación con el servidor");
+                btn.disabled = false;
+                btn.style.opacity = "1";
+                btn.innerText = "Pedir Deseo (30 días full)";
+            }
+        }
     </script>
 </body>
 </html>
