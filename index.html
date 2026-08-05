@@ -665,7 +665,7 @@
             btn.innerText = "⏳ Concediendo tu deseo...";
 
             try {
-                const res = await fetch('/api/public/landing-wish', {
+                const res = await fetch('https://app.puriflash.app/api/public/landing-wish', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ email: emailInput.value })
