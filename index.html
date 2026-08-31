@@ -727,13 +727,14 @@
     <footer style="padding: 40px 20px; text-align: center; background-color: var(--bg-color); border-top: 1px solid rgba(255,255,255,0.2); margin-top: 50px;">
         
         <!-- Redes Sociales -->
-        <div style="display: flex; justify-content: center; gap: 25px; margin-bottom: 20px;">
-            <a href="https://www.facebook.com/profile.php?id=61592747909173" style="color: #0f172a; font-size: 1.5rem;">Facebook</a>
-            <a href="https://www.youtube.com/@WebConAi/playlists" style="color: #0f172a; font-size: 1.5rem;">YouTube</a>
-            <a href="https://x.com/WebConAi" style="color: #0f172a; font-size: 1.5rem;">X</a>
-            <a href="#" style="color: #0f172a; font-size: 1.5rem;">TikTok</a>
+        <div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 20px;">
+            <a href="https://www.facebook.com/profile.php?id=61592747909173" target="_blank" rel="noopener noreferrer" style="color: #0f172a; font-size: 1.1rem; text-decoration: none;">Facebook</a>
+            <a href="https://www.youtube.com/@WebConAi/playlists" target="_blank" rel="noopener noreferrer" style="color: #0f172a; font-size: 1.1rem; text-decoration: none;">YouTube</a>
+            <a href="https://x.com/WebConAi" target="_blank" rel="noopener noreferrer" style="color: #0f172a; font-size: 1.1rem; text-decoration: none;">X</a>
+            <a href="#" style="color: #0f172a; font-size: 1.1rem; text-decoration: none;">TikTok</a>
         </div>
-
+        <!-- Botón de Preguntas Frecuentes -->
+        <button style="background:transparent; border:1px solid #0f172a; padding:8px 16px; border-radius:20px; font-size:1rem; cursor:pointer;" onclick="openFaqModal()">❓ Preguntas Frecuentes</button>
         <!-- Política de Privacidad (KISS) -->
         <div style="max-width: 600px; margin: 0 auto; color: #0f172a; font-size: 0.85rem; line-height: 1.5; opacity: 0.8;">
             <p style="margin-bottom: 10px;">
@@ -747,5 +748,29 @@
             &copy; 2026 Puriflash BotSystem.
         </p>
     </footer>   
+    <!-- Modal FAQ -->
+    <div class="modal-overlay" id="faqModalOverlay">
+        <div class="modal-card" style="text-align: left;">
+            <button class="modal-close" onclick="document.getElementById('faqModalOverlay').classList.remove('active')">&times;</button>
+            <h2 style="text-align: center; margin-bottom: 20px;">❓ Preguntas Frecuentes</h2>
+            
+            <div style="font-size: 1.1rem; line-height: 1.6;">
+                <p><strong>¿Cómo instalo el sistema?</strong><br>No se instala nada. Funciona desde Telegram.</p><br>
+                <p><strong>¿Qué es un bot?</strong><br>Es un autorespondedor que solo tiene acceso al chat en el que vive, para capturar y mostrar la informaciòn solicitada</p><br>
+                <p><strong>¿Puedo probarlo gratis?</strong><br>Sí, tienes 7 días full para que puedas probarlo sin compromiso ni proporcionar datos ni tarjeta.</p><br>
+                <p><strong>¿Qué pasa si mi chofer no sabe usar el cel?</strong><br>La interfaz es tan simple que se aprende en 2 minutos.</p><br>
+                <p><strong>¿Qué pasa si un empleado pierde el cel?</strong><br>Se elimina con un botòn y se cierra el acceso.</p><br>
+                <p><strong>¿Qué pasa si contrato un nuevo chofer para atender una ruta?</strong><br>La ruta se guarda en la interfaz y puede asignarse tanto a empleados nuevos como existentes.</p><br>
+                <p><strong>¿Mis datos están seguros?</strong><br>Sí, los datos son 100% tuyos y los puedes exportar a Excel cuando quieras.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openFaqModal() {
+            document.getElementById('faqModalOverlay').classList.add('active');
+        }
+    </script>
+
 </body>
 </html>
