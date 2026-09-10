@@ -723,29 +723,40 @@
             }
         }
     </script>
-<!-- Footer Integrado -->
-    <footer style="padding: 40px 20px; text-align: center; background-color: var(--bg-color); border-top: 1px solid rgba(255,255,255,0.2); margin-top: 50px;">
-        
-        <!-- Redes Sociales -->
-        <div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 20px;">
-            <a href="https://www.facebook.com/profile.php?id=61592747909173" target="_blank" rel="noopener noreferrer" style="color: #0f172a; font-size: 1.1rem; text-decoration: none;">Facebook</a>
-            <a href="https://www.youtube.com/@WebConAi/playlists" target="_blank" rel="noopener noreferrer" style="color: #0f172a; font-size: 1.1rem; text-decoration: none;">YouTube</a>
-            <a href="https://x.com/WebConAi" target="_blank" rel="noopener noreferrer" style="color: #0f172a; font-size: 1.1rem; text-decoration: none;">X</a>
-            <a href="#" style="color: #0f172a; font-size: 1.1rem; text-decoration: none;">TikTok</a>
-        </div>
-        <!-- Botón de Preguntas Frecuentes -->
-        <button style="background:transparent; border:1px solid #0f172a; padding:8px 16px; border-radius:20px; font-size:1rem; cursor:pointer;" onclick="openFaqModal()">❓ Preguntas Frecuentes</button>
-        <!-- Política de Privacidad (KISS) -->
-        <div style="max-width: 600px; margin: 0 auto; color: #0f172a; font-size: 0.85rem; line-height: 1.5; opacity: 0.8;">
-            <p style="margin-bottom: 10px;">
-                <strong>Privacidad y Seguridad:</strong> Tu información comercial y la de tus clientes se almacena de forma privada y cifrada. Puriflash jamás vende, comparte ni utiliza tus datos para fines ajenos a tu operación. La información es 100% tuya y puedes solicitar su baja o exportación en cualquier momento.
-            </p>
-        </div>
 
-        <p style="color: #0f172a; font-size: 0.8rem; margin-top: 20px; opacity: 0.7;">
-            &copy; 2026 Puriflash BotSystem.
+<!-- Footer Integrado -->
+<footer style="padding: 40px 20px; text-align: center; background-color: var(--bg-color); border-top: 1px solid rgba(255,255,255,0.2); margin-top: 50px;">
+    
+    <!-- Botón de Preguntas Frecuentes -->
+    <button style="background:transparent; border:1px solid #0f172a; padding:8px 16px; border-radius:20px; font-size:1rem; cursor:pointer;" onclick="openFaqModal()">❓ Preguntas Frecuentes</button>
+    
+    <!-- Espacio de una línea entre FAQ y Privacidad -->
+    <div style="height: 1.5rem;"></div>
+
+    <!-- Política de Privacidad (KISS) -->
+    <div style="max-width: 600px; margin: 0 auto; color: #0f172a; font-size: 0.85rem; line-height: 1.5; opacity: 0.8;">
+        <p style="margin-bottom: 10px;">
+            <strong>Privacidad y Seguridad:</strong> Tu información comercial y la de tus clientes se almacena de forma privada y cifrada. Puriflash jamás vende, comparte ni utiliza tus datos para fines ajenos a tu operación. La información es 100% tuya y puedes solicitar su baja o exportación en cualquier momento.
         </p>
-    </footer>   
+    </div>
+
+    <!-- Enlace a Términos y Condiciones / Políticas de Privacidad -->
+    <div style="margin-top: 10px;">
+        <a href="javascript:void(0)" onclick="openLegalModal()" style="color: #0f172a; font-size: 0.9rem; text-decoration: underline; font-weight: 600;">Términos y Condiciones / Políticas de Privacidad</a>
+    </div>
+
+    <!-- Redes Sociales (Movidas arriba del Copyright) -->
+    <div style="display: flex; justify-content: center; gap: 20px; margin-top: 25px; margin-bottom: 15px;">
+        <a href="https://www.facebook.com/profile.php?id=61592747909173" target="_blank" rel="noopener noreferrer" style="color: #0f172a; font-size: 1.1rem; text-decoration: none;">Facebook</a>
+        <a href="https://www.youtube.com/@WebConAi/playlists" target="_blank" rel="noopener noreferrer" style="color: #0f172a; font-size: 1.1rem; text-decoration: none;">YouTube</a>
+        <a href="https://x.com/WebConAi" target="_blank" rel="noopener noreferrer" style="color: #0f172a; font-size: 1.1rem; text-decoration: none;">X</a>
+        <a href="#" style="color: #0f172a; font-size: 1.1rem; text-decoration: none;">TikTok</a>
+    </div>
+
+    <p style="color: #0f172a; font-size: 0.8rem; opacity: 0.7;">
+        &copy; 2026 Puriflash BotSystem.
+    </p>
+</footer>
     <!-- Modal FAQ -->
     <div class="modal-overlay" id="faqModalOverlay">
         <div class="modal-card" style="text-align: left;">
@@ -767,10 +778,52 @@
     </div>
 
     <script>
-        function openFaqModal() {
-            document.getElementById('faqModalOverlay').classList.add('active');
-        }
-    </script>
+    function openFaqModal() {
+        document.getElementById('faqModalOverlay').classList.add('active');
+    }
 
+    function openLegalModal() {
+        document.getElementById('legalModalOverlay').classList.add('active');
+    }
+    </script>
+<!-- Modal Términos y Condiciones / Políticas de Privacidad -->
+<div class="modal-overlay" id="legalModalOverlay">
+    <div class="modal-card" style="text-align: left;">
+        <button class="modal-close" onclick="document.getElementById('legalModalOverlay').classList.remove('active')">&times;</button>
+        <h2 style="text-align: center; margin-bottom: 20px;">Términos y Condiciones / Política de Privacidad</h2>
+        
+        <div style="font-size: 0.95rem; line-height: 1.6; color: var(--text-color);">
+            <h3 style="color: var(--accent-color); margin-bottom: 10px;">TÉRMINOS Y CONDICIONES DE USO</h3>
+            <p style="margin-bottom: 15px;"><strong>Servicio:</strong> Puriflash BotSystem<br><strong>Jurisdicción:</strong> Estados Unidos Mexicanos</p>
+
+            <p style="margin-bottom: 10px;"><strong>1. Aceptación e Identificación del Servicio</strong><br>
+            Al registrarse, contratar o hacer uso del bot de Telegram y las WebApps asociadas a Puriflash BotSystem (en adelante, "el Servicio"), el cliente (en adelante, "el Usuario") acepta íntegramente los presentes Términos y Condiciones. El Servicio está diseñado como una plataforma de gestión integral para plantas purificadoras de agua en México.</p>
+
+            <p style="margin-bottom: 10px;"><strong>2. Modalidad Prepago, Pagos y Facturación</strong><br>
+            El Servicio opera estrictamente bajo la modalidad de pago por adelantado (mensual o anual). Todos los cobros se procesan de forma segura a través de Mercado Pago. La falta de pago al término del periodo contratado resultará en la suspensión inmediata e interrupción del acceso al bot, WebApps y módulos de reparto el día exacto de vencimiento. No se otorgarán devoluciones parciales ni totales por cancelación anticipada o falta de uso del Servicio.</p>
+
+            <p style="margin-bottom: 10px;"><strong>3. Resguardo y Eliminación de Información</strong><br>
+            El Usuario (dueño de la cuenta) conservará el derecho absoluto de exportar y descargar la información de su planta (clientes, ventas, inventarios y rutas) en cualquier momento mediante las herramientas integradas en la plataforma. En caso de suspensión o no renovación, la información se resguardará por máximo 30 días naturales. Transcurrido este plazo, Puriflash BotSystem eliminará permanentemente todos los datos de nuestros servidores sin posibilidad de recuperación.</p>
+
+            <p style="margin-bottom: 15px;"><strong>4. Disponibilidad e Infraestructura de Terceros</strong><br>
+            El Servicio depende del funcionamiento de la API de Telegram, la infraestructura de Mercado Pago y servicios de mapas en la nube. Puriflash BotSystem no se hace responsable por interrupciones derivadas de fallas en estas plataformas de terceros ni por pérdidas indirectas en la operación de reparto o cobranza.</p>
+
+            <hr style="border: 0; border-top: 1px solid rgba(0,0,0,0.1); margin: 20px 0;">
+
+            <h3 style="color: var(--accent-color); margin-bottom: 10px;">POLÍTICA DE PRIVACIDAD</h3>
+            <p style="margin-bottom: 10px;"><strong>1. Datos Personales y Operativos Recopilados</strong><br>
+            Recopilamos: Nombre de la purificadora, teléfono, correo de contacto, Telegram ID del administrador, base de datos de clientes finales, direcciones de entrega, historial de consumos/cobranza y geolocalización de repartidores únicamente al ejecutar rutas activas.</p>
+
+            <p style="margin-bottom: 10px;"><strong>2. Finalidad del Tratamiento de Datos</strong><br>
+            Los datos son tratados exclusivamente para autenticar accesos, desplegar rutas óptimas de reparto en tiempo real, procesar renovaciones de suscripción con Mercado Pago y permitir al titular la descarga completa de su información operativa.</p>
+
+            <p style="margin-bottom: 10px;"><strong>3. Compartición con Terceros</strong><br>
+            No comercializamos ni cedemos información a terceros. Los datos se procesan únicamente mediante proveedores técnicos estrictamente necesarios para la operación: Mercado Pago (pagos), Telegram (interfaz de usuario) e Infraestructura Cloud (alojamiento seguro de datos).</p>
+
+            <p style="margin-bottom: 10px;"><strong>4. Conservación y Depuración</strong><br>
+            Los datos permanecen almacenados mientras la cuenta esté activa. Tras 30 días naturales de inactividad por falta de pago, la base de datos completa de la purificadora es borrada de manera definitiva de nuestros servidores.</p>
+        </div>
+    </div>
+</div>
 </body>
 </html>
