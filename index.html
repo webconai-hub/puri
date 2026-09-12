@@ -757,26 +757,64 @@
         &copy; 2026 Puriflash BotSystem.
     </p>
 </footer>
-    <!-- Modal FAQ -->
-    <div class="modal-overlay" id="faqModalOverlay">
-        <div class="modal-card" style="text-align: left;">
-            <button class="modal-close" onclick="document.getElementById('faqModalOverlay').classList.remove('active')">&times;</button>
-            <h2 style="text-align: center; margin-bottom: 20px;">❓ Preguntas Frecuentes</h2>
+<!-- Modal FAQ -->
+<div class="modal-overlay" id="faqModalOverlay">
+    <div class="modal-card" style="text-align: left;">
+        <button class="modal-close" onclick="document.getElementById('faqModalOverlay').classList.remove('active')">&times;</button>
+        <h2 style="text-align: center; margin-bottom: 20px;">Preguntas Frecuentes</h2>
+        
+        <div style="font-size: 0.95rem; line-height: 1.6; color: var(--text-color);">
             
-            <div style="font-size: 1.1rem; line-height: 1.6;">
-                <p><strong>¿Cómo instalo el sistema?</strong><br>No se instala nada. Funciona desde Telegram.</p><br>
-                <p><strong>¿Qué es un bot?</strong><br>Es un autorespondedor que solo tiene acceso al chat en el que vive, para capturar y mostrar la informaciòn solicitada</p><br>
-                <p><strong>¿A qué tiene acceso el bot en mi cel?</strong><br>Solo al chat en el que vive, No puede ver tus aplicaciones, fotos o correo electrònico, tampoco puede ver tu número de teléfono (a menos que uses un botón oficial de Telegram para compartirlo)
-. No tiene forma de leer tu agenda o lista de contactos guardados. No puede ver tus conversaciones privadas con otras personas o grupos.</p><br>
-                <p><strong>¿Puedo probarlo gratis?</strong><br>Sí, tienes 7 días full para que puedas probarlo sin compromiso ni proporcionar datos ni tarjeta.</p><br>
-                <p><strong>¿Qué pasa si mi chofer no sabe usar el cel?</strong><br>La interfaz es tan simple que se aprende en 2 minutos.</p><br>
-                <p><strong>¿Qué pasa si un empleado pierde el cel?</strong><br>Se elimina con un botòn y se cierra el acceso.</p><br>
-                <p><strong>¿Qué pasa si contrato un nuevo chofer para atender una ruta?</strong><br>La ruta se guarda en la interfaz y puede asignarse tanto a empleados nuevos como existentes.</p><br>
-                <p><strong>¿Mis datos están seguros?</strong><br>Sí, los datos son 100% tuyos y los puedes exportar a Excel cuando quieras.</p>
+            <!-- Pregunta 1 -->
+            <div style="margin-bottom: 18px;">
+                <h3 style="color: var(--accent-color); font-size: 1.05rem; margin-bottom: 4px;">¿Cómo comenzar a usarlo?</h3>
+                <p style="margin: 0;">Desde Telegram busca <strong>@Purifica_bot</strong> y agrégalo para iniciar al instante.</p>
+            </div>
+
+            <!-- Pregunta 2 -->
+            <div style="margin-bottom: 18px;">
+                <h3 style="color: var(--accent-color); font-size: 1.05rem; margin-bottom: 4px;">¿A qué tiene acceso el bot en mi celular?</h3>
+                <p style="margin: 0;">Solo al chat en el que vive. Sistemas como Android e iOS cuentan con protecciones estrictas que obligan a las aplicaciones a funcionar de forma aislada y segura en tu dispositivo.</p>
+            </div>
+
+            <!-- Pregunta 3 -->
+            <div style="margin-bottom: 18px;">
+                <h3 style="color: var(--accent-color); font-size: 1.05rem; margin-bottom: 4px;">¿Qué pasa si entra un nuevo chofer o pierden un celular?</h3>
+                <p style="margin: 0;">Si se pierde un celular, se pausa el acceso con un solo botón desde el panel. Las rutas permanecen resguardadas en la interfaz y puedes asignarlas a empleados nuevos o existentes para que vean sus clientes, deudas, envases prestados y navegación GPS en tiempo real.</p>
+            </div>
+
+            <!-- Pregunta 4 -->
+            <div style="margin-bottom: 18px;">
+                <h3 style="color: var(--accent-color); font-size: 1.05rem; margin-bottom: 4px;">¿Mis datos están seguros?</h3>
+                <p style="margin: 0;">Sí, tus datos están almacenados en servidores de Puriflash con conexiones cifradas de extremo a extremo y solo tú tienes acceso mediante tu bot. La información es 100% tuya y puedes exportarla a Excel en cualquier momento.</p>
+            </div>
+
+            <!-- Pregunta 5 -->
+            <div style="margin-bottom: 18px;">
+                <h3 style="color: var(--accent-color); font-size: 1.05rem; margin-bottom: 4px;">¿Cuánto cuesta el servicio?</h3>
+                <p style="margin: 0; margin-bottom: 6px;">Manejamos un <strong>Precio de Lanzamiento de $299 MXN / mes</strong>.</p>
+                <p style="margin: 0; margin-bottom: 6px;">A diferencia de otros sistemas que te cobran más por cada chofer que agregas, por el número de rutas o por el límite de clientes, en Puriflash tienes <strong>un solo plan</strong>:</p>
+                <ul style="margin: 4px 0 0 20px; padding: 0;">
+                    <li><strong>Sin límites:</strong> Rutas, choferes, clientes y ventas ilimitadas.</li>
+                    <li><strong>Prueba de 7 días GRATIS:</strong> Acceso total sin tarjetas ni compromisos.</li>
+                    <li><em>Módulos opcionales:</em> Si requieres Facturación Electrónica o personalizar la plataforma con tu Marca Blanca, se pueden contratar como agregados independientes sin alterar tu tarifa operativa base.</li>
+                </ul>
+            </div>
+
+            <!-- Pregunta 6 -->
+            <div style="margin-bottom: 18px;">
+                <h3 style="color: var(--accent-color); font-size: 1.05rem; margin-bottom: 4px;">¿Hay plazos forzosos?</h3>
+                <p style="margin: 0;">No. El esquema es por suscripción (mensual o anual) y puedes cancelar cuando quieras sin penalizaciones.</p>
+            </div>
+
+            <!-- Pregunta 7 -->
+            <div style="margin-bottom: 10px;">
+                <h3 style="color: var(--accent-color); font-size: 1.05rem; margin-bottom: 4px;">¿Tienen soporte si me atoro en algo?</h3>
+                <p style="margin: 0;">Sí, te brindamos atención directa por Telegram para configuraciones o cualquier duda operativa.</p>
             </div>
         </div>
     </div>
-
+</div>
     <script>
     function openFaqModal() {
         document.getElementById('faqModalOverlay').classList.add('active');
