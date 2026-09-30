@@ -470,7 +470,7 @@
                 <div class="checkbox-group">
                     <label class="checkbox-label">
                         <input type="checkbox" required>
-                        <span>Acepto que puedo probar full por 7 días sin ningún compromiso. Si mi deseo se hace realidad y decido quedarme, la inversión es de <span class="price-highlight">$299 al mes</span>. Si no decido quedarme, por lo menos lo habré intentado.</span>
+                        <span>Acepto que puedo probar full por 7 días sin ningún compromiso. Si decido quedarme, la inversión es de <span class="price-highlight">$299 al mes</span>. Si no decido quedarme, por lo menos lo habré intentado.</span>
                     </label>
                     <label class="checkbox-label">
                         <input type="checkbox" required>
@@ -684,9 +684,9 @@
                     successBox.style.textAlign = "center";
                     
                     successBox.innerHTML = `
-                        <h2 style="font-size:2rem; color:#0284c7; margin-bottom:15px;">🎉 ¡Tu Deseo ha sido Concedido!</h2>
+                        <h2 style="font-size:2rem; color:#0284c7; margin-bottom:15px;">🎉 ¡Registro Completado Correctamente!</h2>
                         <p style="font-size:1.2rem; color:#334155; margin-bottom:20px;">
-                            Hemos preparado tu entorno completo para administrar tu planta. Tu acceso exclusivo durante 30 días está listo.
+                            Hemos preparado tu entorno completo para administrar tu planta. Tu acceso exclusivo durante 7 días está listo.
                         </p>
                         
                         <div style="background:#e0f2fe; border:2px dashed #0284c7; padding:20px; border-radius:16px; margin-bottom:25px;">
@@ -699,7 +699,7 @@
                             📲 Abrir Telegram e Ingresar Llave
                         </a>
 
-                        <div style="text-align:left; background:#f8fafc; padding:20px; border-radius:12px; margin-top:25px; font-size:0.95rem; color:#475569; line-height:1.6;">
+                        <div style="text-align:left; background:#f8fafc; padding:20px; border-radius:12px; margin-top:25px; font-size:1rem; color:#475569; line-height:1.6;">
                             <strong>📌 Guía Rápida de Inicio:</strong><br>
                             1. Toca el botón azul arriba para abrir el Bot en Telegram y pega tu Llave <strong>${data.activation_code}</strong>.<br>
                             2. En 'Personal' -> Crea tus primeras 'Rutas'.<br>
@@ -713,7 +713,7 @@
                     alert("❌ Error: " + (data.error || "No se pudo procesar tu deseo"));
                     btn.disabled = false;
                     btn.style.opacity = "1";
-                    btn.innerText = "Pedir Deseo (30 días full)";
+                    btn.innerText = "Pedir Deseo (7 días full)";
                 }
             } catch(err) {
                 alert("❌ Falló la comunicación con el servidor");
